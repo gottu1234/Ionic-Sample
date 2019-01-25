@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="set-column">
+        <span class="dot" [ngStyle]="{'background-color':(_mqttData && _mqttData.RS[0] === true) ? 'green' : 'red' }"></span>
+        <span class="dot" [ngStyle]="{'background-color':(_mqttData && _mqttData.RS[0] === true) ? 'green' : 'red' }"></span>
+        <span class="dot" [ngStyle]="{'background-color':(_mqttData && _mqttData.RS[0] === true) ? 'green' : 'red' }"></span>
+        <span class="dot" [ngStyle]="{'background-color':(_mqttData && _mqttData.RS[0] === true) ? 'green' : 'red' }"></span>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6 class="set-column">
+           <h6 class="font-health">Health</h6>
+        </ion-col>
+        <ion-col col-6 class="set-column">
+          
+        </ion-col>
+    </ion-row>
+    <ion-row class='set-row-height'>
+      <ion-col col-6 class='set-column'>
+              <ion-button class='set-button' (click)="publishSwitch('1')">ON</ion-button>    
+      </ion-col>
+      <ion-col col-6 class='set-column'>
+        <ion-button  class='set-button' (click)="publishSwitch('0')">OFF
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class='set-column'>
+        <ion-button ion-button class='set-button'(click)="publishSwitch('2')">Refresh
+          </ion-button>
+    </ion-row>
+  </ion-grid>
+</ion-content>
